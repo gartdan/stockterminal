@@ -1,6 +1,8 @@
 ### stx: A command line Stock Terminal ###
 Stx is a command-line utility that retrieves real-time market pricing data from the IEX api. Written in .NET Core. It is cross-platform and can run on mac, linux and windows.
 
+![Build Status](https://travis-ci.org/gartdan/stockterminal.svg?branch=master "Build Status")
+
 
 ![Screenshot](https://raw.githubusercontent.com/gartdan/stockterminal/master/screenshot.png "Stx Screenshot")
 

@@ -9,11 +9,11 @@ Stx is a command-line utility that retrieves real-time market pricing data from 
 
 ### Using Stx ###
 Type stx -h to see help.
-- stx --s <ticker list> : e.g. stx -s msft,aapl,goog,amzn,pvtl,docu,sfix,mu,nvida,intc,v,ma,gs,jpm,bac,tsla,twtr,fb
-- stx --c <ticker> : e.g. stx -c msft to  see chart data
-- stx --c <ticker> -t <timeframe> : valid timeframes are: 5y, 2y, 1y, ytd, 6m, 3m, 1m, 1d, date/YYYYDDMM
-- stx --news <ticker>
-- stx --stats <ticker>
+- stx --s *ticker list* : e.g. stx --s msft,aapl,goog,amzn,pvtl,docu,sfix,mu,nvida,intc,v,ma,gs,jpm,bac,tsla,twtr,fb
+- stx --c *ticker* : e.g. stx --c msft to  see chart data
+- stx --c *ticker* --t *timeframe* : valid timeframes are: 5y, 2y, 1y, ytd, 6m, 3m, 1m, 1d, date/YYYYDDMM
+- stx --news *ticker*
+- stx --stats *ticker*
 
 
 The plan is to implement the rest of the IEX API.

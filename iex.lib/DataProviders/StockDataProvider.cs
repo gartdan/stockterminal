@@ -23,6 +23,7 @@ namespace iex.lib.DataProviders
             return jobject;
         }
 
+
         public async Task<JArray> GetJsonArray(string url)
         {
             var json = await GetString(url);

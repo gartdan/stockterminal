@@ -61,6 +61,10 @@ namespace stx.consoleapp
             {
                 GetChart(opts.Chart, opts.Timeframe);
             }
+            else if(!string.IsNullOrEmpty(opts.News))
+            {
+                GetNews(opts.News);
+            }
         }
 
         public static void GetChart(string symbol, string timeframe)
@@ -71,6 +75,17 @@ namespace stx.consoleapp
             {
                 Console.WriteLine(PrettyConsoleFormatter.FormatAsLine(d));
             }
+        }
+
+        public static void GetNews(string symbol)
+        {
+            var provider = new IEXDataProvider();
+            var news = provider.GetNews(symbol).Result;
+            foreach(var item in news)
+            {
+                Console.WriteLine(PrettyConsoleFormatter.FormatNews(item));
+            }
+                        
         }
 
         public static void GetQuotes(IEnumerable<string> symbols, IConfiguration config)

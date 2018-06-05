@@ -22,5 +22,10 @@ namespace stx.consoleapp
         {
             return $"{quote.symbol,-6} | {quote.latestPrice,8} | {quote.change,8} | {(quote.changePercent.Value * 100).ToString("0.000"),8} | {quote.open,8} | {quote.high,8} | {quote.low,8} | {quote.previousClose,10} | {quote.latestVolume,10} | {quote.avgTotalVolume,10} | {quote.week52High.Value.ToString("0.00"),8} | {quote.week52Low.Value.ToString("0.00"),8} | {(quote.ytdChange.Value * 100).ToString("0.00"),10} | {quote.peRatio,6}";
         }
+
+        public static string FormatNews(IexNews item)
+        {
+            return $"{item.Datetime, -14} | {item.Headline, 40} | {item.Url}";
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace iex.lib.DataProviders
     {
         static readonly string ChartEndpointUrlFormat = "https://api.iextrading.com/1.0/stock/{0}/chart/{1}";
         static readonly string BatchEndpointUrlFormat = "https://api.iextrading.com/1.0/stock/market/batch?symbols={0}&types=quote";
+        static readonly string NewsEndpointUrlFormat = "https://api.iextrading.com/1.0/stock/{0}/news";
         static readonly string[] ValidTimeframes = { "5y", "2y", "1y", "ytd", "6m", "3m", "1m", "1d", "dynamic" };
         public async Task<JObject> GetQuotesAsJson(params string[] symbols)
         {
@@ -61,6 +62,13 @@ namespace iex.lib.DataProviders
         public async Task<IList<ChartData>> GetChartData(string symbol)
         {
             return await GetChartData(symbol, string.Empty);
+        }
+
+        public async Task<IList<IexNews>> GetNews(string symbol)
+        {
+            var url = string.Format(NewsEndpointUrlFormat, symbol);
+            var json = await GetString(url);
+            return IexNews.FromJson(json);
         }
 
         public bool IsValidTimeFrame(string timeframe)

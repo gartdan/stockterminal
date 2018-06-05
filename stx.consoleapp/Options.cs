@@ -17,6 +17,12 @@ namespace stx.consoleapp
 
         [Option('t', "timeframe", HelpText ="Timeframe for which to return chart data")]
         public string Timeframe { get; set; }
+
+        [Option("stats", Required=false, HelpText = "Key stats for a symbol")]
+        public string Stats { get; set; }
+
+        [Option("news", Required=false, HelpText="News for a particular symbol")]
+        public string News { get; set; }
         
 
 

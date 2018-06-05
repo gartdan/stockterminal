@@ -18,5 +18,13 @@ namespace utl.lib.tests
             var news = sut.GetNews("TWTR");
             Assert.IsNotNull(news);
         }
+
+        [TestMethod]
+        public void GetStats()
+        {
+            var sut = new IEXDataProvider();
+            var stats = sut.GetKeyStats("AAPL");
+            Assert.IsNotNull(stats);
+        }
     }
 }

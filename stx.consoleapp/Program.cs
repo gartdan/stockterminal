@@ -65,6 +65,17 @@ namespace stx.consoleapp
             {
                 GetNews(opts.News);
             }
+            else if(!string.IsNullOrEmpty(opts.Stats))
+            {
+                GetStats(opts.Stats);
+            }
+        }
+
+        private static void GetStats(string symbol)
+        {
+            var provider = new IEXDataProvider();
+            var keyStats = provider.GetKeyStats(symbol).Result;
+            Console.WriteLine(PrettyConsoleFormatter.FormatStats(keyStats));
         }
 
         public static void GetChart(string symbol, string timeframe)
